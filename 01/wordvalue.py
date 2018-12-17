@@ -12,7 +12,7 @@ def calc_word_value(word):
     """Calculate the value of the word entered into function
     using imported constant mapping LETTER_SCORES"""
 
-    return sum(LETTER_SCORES[char] for char in list(word.upper())
+    return sum(LETTER_SCORES[char] for char in word.upper()
                     if char in LETTER_SCORES)
 
 
