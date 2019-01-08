@@ -30,11 +30,11 @@ def get_similarities(tags):
 
     sim_tags = []
     for singular, plural in product(tags, tags):
-            if not singular.startswith(plural[0]) or singular.endswith('s'):
-                continue
-            ratio = round(SequenceMatcher(None, singular, plural).ratio(), 2)
-            if ratio > SIMILAR and ratio < IDENTICAL:
-                sim_tags.append((singular, plural))
+        if not singular.startswith(plural[0]) or singular.endswith('s'):
+            continue
+        ratio = round(SequenceMatcher(None, singular, plural).ratio(), 2)
+        if ratio > SIMILAR and ratio < IDENTICAL:
+            sim_tags.append((singular, plural))
     
     return sim_tags
 
